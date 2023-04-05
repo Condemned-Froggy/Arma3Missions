@@ -1,0 +1,16 @@
+0 = [] spawn 
+    {
+        while {true} do 
+        {
+            waituntil  
+                {
+                    sleep 1; (weapons player isEqualTo []) 
+                };
+                    player setCaptive true;
+            waituntil  
+                {
+                    sleep 1; !(weapons player isEqualTo []) 
+                };
+                    player setCaptive false;
+        };
+    };
