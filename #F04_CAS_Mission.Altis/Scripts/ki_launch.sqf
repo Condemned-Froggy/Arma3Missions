@@ -1,4 +1,4 @@
-        /*
+ /*
             author: @Aebian
             description: Launch script for AI catapult start from USS Freedom
             returns: nothing
@@ -15,7 +15,7 @@
             _carrierObj = "Land_Carrier_01_hull_04_F";
         };
 
-        (driver _plane) disableAI "MOVE";
+        (driver _plane) disableAI "PATH";
 
         sleep 10;
 
@@ -33,6 +33,6 @@
         [_plane] call BIS_fnc_AircraftCatapultLaunch;
 
         sleep 4;
-        (driver _plane)  enableAI "MOVE";
+        (driver _plane)  enableAI "PATH";
         sleep 6;
         [_CarrierPart, _CarrierPartanimations, 0] spawn BIS_fnc_Carrier01AnimateDeflectors;
