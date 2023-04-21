@@ -1,3 +1,8 @@
+
+if(!isServer) exitWith {};
+
+_filled = 4;
+
 _weapon = "hgun_ACPC2_F"; 
 switch (1) do { 
  case 1: { 
@@ -21,8 +26,8 @@ switch (1) do {
    case 17: {_weapon = "SMG_03_TR_black";}; 
    case 18: {_weapon = "srifle_DMR_01_F";}; 
    default {_weapon = "hgun_ACPC2_F";};}; 
-  _this addWeaponCargo [_weapon, 1];}; 
- default {  };}; 
+  _this addWeaponCargoGlobal  [_weapon, 1];}; 
+ default {_filled = _filled -1;};}; 
  
 _ammoAmount = (round random 2) + 1; 
 _ammo = "9Rnd_45ACP_Mag"; 
@@ -47,5 +52,13 @@ switch (1) do
    case 16: {_ammo = "50Rnd_570x28_SMG_03";}; 
    case 17: {_ammo = "10Rnd_762x54_Mag";}; 
    default {_ammo = "16Rnd_9x21_Mag";};}; 
-  _this addMagazineCargo [_ammo, _ammoAmount];}; 
- default {  };};
+  _this addMagazineCargoGlobal [_ammo, _ammoAmount];}; 
+ default {_filled = _filled -1;};};
+ 
+ _filled = _filled -1;
+ _filled = _filled -1;
+ 
+ if (_filled == 0) then 
+ {
+	_this addItemCargoGlobal ["ItemRadio"];
+ };
