@@ -4,7 +4,7 @@ if(!isServer) exitWith {};
 _filled = 4;
 
 _weapon = "hgun_ACPC2_F";
-switch (round random 2) do 
+switch (round random 4) do 
 { 
  case 1: 
  { 
@@ -35,9 +35,9 @@ switch (round random 2) do
  default {_filled = _filled -1;};
 }; 
  
-_ammoAmount = (round random 2) + 1; 
+_ammoAmount = (round random 3) + 1; 
 _ammo = "9Rnd_45ACP_Mag"; 
-switch (1) do 
+switch (round random 2) do 
 { case 1: { 
   switch (round random 17) do { 
    case 1: {_ammo = "9Rnd_45ACP_Mag";}; 
