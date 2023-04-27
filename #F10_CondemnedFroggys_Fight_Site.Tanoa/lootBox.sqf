@@ -3,7 +3,7 @@ if(!isServer) exitWith {};
 
 _weapon = "hgun_ACPC2_F";
 _startingAmmo = "9Rnd_45ACP_Mag";
-switch (round random 6) do { 
+switch (round random 7) do { 
  case 1: { 
   switch ((round random 27) + 1) do {  
    case 1: {_weapon = "hgun_ACPC2_F";_startingAmmo = "9Rnd_45ACP_Mag";}; 
@@ -131,13 +131,13 @@ switch (round random 1) do {
   _this addItemCargoGlobal  [_helmet, 1];};
  default {};};
 
-switch (round random 2) do { 
+switch (round random 3) do { 
  case 1: {_this addItemCargoGlobal ["FirstAidKit", 1];};
  case 2: {_this addItemCargoGlobal ["FirstAidKit", 2];};
  default {};};
  
 _throwables = "SmokeShell";
-switch (round random 1) do { 
+switch (round random 2) do { 
  case 1: { 
   switch ((round random 11) + 1) do {  
    case 1: {_throwables = "SmokeShell";};
@@ -155,13 +155,75 @@ switch (round random 1) do {
    default {_throwables = "SmokeShell";};};
   _this addItemCargoGlobal  [_throwables, 1];};
  default {};};
- 
-_attachment = "SmokeShell";
-switch (round random 1) do { 
- case 1: { 
-  switch ((round random 11) + 1) do {  
-   case 1: {_attachment = "SmokeShell";};
-   default {_attachment = "SmokeShell";};};
+
+for [{_i=0},{_i<4},{_i=_i+1}] do 
+{
+ _attachment = "acc_flashlight_pistol";
+ switch (round random 5) do { 
+  case 1: {
+   switch ((round random 15) + 1) do {  
+	case 1: {_attachment = "muzzle_snds_L";};
+    case 2: {_attachment = "muzzle_snds_L";};
+	case 3: {_attachment = "muzzle_snds_L";};
+    case 4: {_attachment = "muzzle_snds_L";};
+	case 5: {_attachment = "muzzle_snds_L";};
+    case 6: {_attachment = "muzzle_snds_L";};	
+	case 7: {_attachment = "muzzle_snds_acp";};
+    case 8: {_attachment = "muzzle_snds_acp";};
+	case 9: {_attachment = "muzzle_snds_acp";};
+	case 10: {_attachment = "muzzle_snds_acp";};	
+	case 11: {_attachment = "muzzle_snds_M";};
+	case 12: {_attachment = "muzzle_snds_M";};
+	case 13: {_attachment = "muzzle_snds_M";};
+	case 14: {_attachment = "muzzle_snds_H";};
+	case 15: {_attachment = "muzzle_snds_H";};
+	case 16-: {_attachment = "muzzle_snds_B";};
+    default {_attachment = "muzzle_snds_L";};};
   _this addItemCargoGlobal  [_attachment, 1];};
- default {};};
- 
+  case 2: {
+   switch ((round random 23) + 1) do {  
+	case 1: {_attachment = "optic_MRD";};
+	case 2: {_attachment = "optic_MRD";};
+	case 3: {_attachment = "optic_MRD";};
+	case 4: {_attachment = "optic_MRD";};
+	case 5: {_attachment = "optic_MRD";};
+	case 6: {_attachment = "optic_MRD";};	
+    case 7: {_attachment = "optic_Aco_smg";};
+	case 8: {_attachment = "optic_Aco_smg";};
+	case 9: {_attachment = "optic_Aco_smg";};
+	case 10: {_attachment = "optic_Aco_smg";};
+	case 11: {_attachment = "optic_Aco_smg";};	
+	case 12: {_attachment = "optic_Holosight";};
+    case 13: {_attachment = "optic_Holosight";};
+    case 14: {_attachment = "optic_Holosight";};
+    case 15: {_attachment = "optic_Holosight";};	
+    case 16: {_attachment = "optic_MRCO";};
+	case 17: {_attachment = "optic_MRCO";};
+	case 18: {_attachment = "optic_MRCO";};	
+	case 19: {_attachment = "optic_Arco";};
+	case 20: {_attachment = "optic_Arco";};	
+	case 21: {_attachment = "optic_Hamr";};	
+	case 22: {_attachment = "optic_ERCO_blk_F";};	
+	case 23: {_attachment = "optic_DMS";};	
+	case 24: {_attachment = "optic_LRPS";};
+    default {_attachment = "optic_MRD";};};
+  _this addItemCargoGlobal  [_attachment, 1];};
+  case 3: {
+   switch ((round random 11) + 1) do {  
+	case : {_attachment = "acc_flashlight_pistol";};
+	case : {_attachment = "acc_flashlight_pistol";};
+	case : {_attachment = "acc_flashlight_pistol";};
+	case : {_attachment = "acc_flashlight_pistol";};	
+	case : {_attachment = "acc_flashlight_smg_01";};
+	case : {_attachment = "acc_flashlight_smg_01";};
+	case : {_attachment = "acc_flashlight_smg_01";};	
+	case : {_attachment = "acc_flashlight";};
+	case : {_attachment = "acc_flashlight";};	
+	case : {_attachment = "acc_pointer_IR";};
+	case : {_attachment = "acc_pointer_IR";};	
+	case : {_attachment = "bipod_01_F_khk";};
+	case : {_attachment = "bipod_01_F_khk";};	
+    default {_attachment = "acc_flashlight_pistol";};};
+  _this addItemCargoGlobal  [_attachment, 1];};
+  default {};};
+}; 
