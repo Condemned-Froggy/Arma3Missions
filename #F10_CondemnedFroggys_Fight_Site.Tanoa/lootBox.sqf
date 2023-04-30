@@ -3,42 +3,73 @@ if(!isServer) exitWith {};
 
 _weapon = "hgun_ACPC2_F";
 _startingAmmo = "9Rnd_45ACP_Mag";
-switch (round random 7) do { 
- case 1: { 
-  switch ((round random 27) + 1) do {  
-   case 1: {_weapon = "hgun_ACPC2_F";_startingAmmo = "9Rnd_45ACP_Mag";}; 
-   case 2: {_weapon = "hgun_ACPC2_F";_startingAmmo = "9Rnd_45ACP_Mag";}; 
-   case 3: {_weapon = "hgun_ACPC2_F";_startingAmmo = "9Rnd_45ACP_Mag";}; 
-   case 4: {_weapon = "hgun_ACPC2_F";_startingAmmo = "9Rnd_45ACP_Mag";}; 
-   case 5: {_weapon = "hgun_P07_F";_startingAmmo = "16Rnd_9x21_Mag";}; 
-   case 6: {_weapon = "hgun_P07_F";_startingAmmo = "16Rnd_9x21_Mag";}; 
-   case 7: {_weapon = "hgun_P07_F";_startingAmmo = "16Rnd_9x21_Mag";}; 
-   case 8: {_weapon = "hgun_P07_F";_startingAmmo = "16Rnd_9x21_Mag";}; 
-   case 9: {_weapon = "hgun_Rook40_F";_startingAmmo = "16Rnd_9x21_Mag";}; 
-   case 10: {_weapon = "hgun_Rook40_F";_startingAmmo = "16Rnd_9x21_Mag";};
-   case 11: {_weapon = "hgun_Rook40_F";_startingAmmo = "16Rnd_9x21_Mag";};
-   case 12: {_weapon = "hgun_Rook40_F";_startingAmmo = "16Rnd_9x21_Mag";};   
-   case 13: {_weapon = "hgun_Pistol_heavy_02_F";_startingAmmo = "6Rnd_45ACP_Cylinder";};
-   case 14: {_weapon = "hgun_Pistol_heavy_02_F";_startingAmmo = "6Rnd_45ACP_Cylinder";};
-   case 15: {_weapon = "hgun_Pistol_heavy_02_F";_startingAmmo = "6Rnd_45ACP_Cylinder";};
-   case 16: {_weapon = "hgun_Pistol_heavy_02_F";_startingAmmo = "6Rnd_45ACP_Cylinder";};   
-   case 17: {_weapon = "arifle_Katiba_C_F";_startingAmmo = "30Rnd_65x39_caseless_green";};   
-   case 18: {_weapon = "arifle_TRG21_F";_startingAmmo = "30Rnd_556x45_Stanag";}; 
-   case 19: {_weapon = "hgun_PDW2000_F";_startingAmmo = "30Rnd_556x45_Stanag";};
-   case 20: {_weapon = "hgun_PDW2000_F";_startingAmmo = "30Rnd_556x45_Stanag";};   
-   case 21: {_weapon = "SMG_01_F";_startingAmmo = "30Rnd_45ACP_Mag_SMG_01_Tracer_Green";};
-   case 22: {_weapon = "SMG_01_F";_startingAmmo = "30Rnd_45ACP_Mag_SMG_01_Tracer_Green";};   
-   case 23: {_weapon = "SMG_02_F";_startingAmmo = "30Rnd_9x21_Mag_SMG_02_Tracer_Red";};
-   case 24: {_weapon = "SMG_02_F";_startingAmmo = "30Rnd_9x21_Mag_SMG_02_Tracer_Red";};   
-   case 25: {_weapon = "SMG_03_TR_black";_startingAmmo = "50Rnd_570x28_SMG_03";};
-   case 26: {_weapon = "SMG_03_TR_black";_startingAmmo = "50Rnd_570x28_SMG_03";};   
-   case 27: {_weapon = "srifle_DMR_01_F";_startingAmmo = "10Rnd_762x54_Mag";};
-   case 28: {_weapon = "launch_RPG7_F";_startingAmmo = "RPG7_F";};
-   default {_weapon = "hgun_ACPC2_F";_startingAmmo = "9Rnd_45ACP_Mag";};}; 
+switch (round random 2) do 
+{ 
+ case 0: 
+ {
+  switch ((round random 3)+1) do 
+  {
+   case 1: {_weapon = "hgun_ACPC2_F";_startingAmmo = "9Rnd_45ACP_Mag";};  
+   case 2: {_weapon = "hgun_P07_F";_startingAmmo = "16Rnd_9x21_Mag";}; 
+   case 3: {_weapon = "hgun_Pistol_heavy_01_F";_startingAmmo = "11Rnd_45ACP_Mag";};   
+   case 4: {_weapon = "hgun_Pistol_heavy_02_F";_startingAmmo = "6Rnd_45ACP_Cylinder";};
+   default {};
+  };
   _this addWeaponCargoGlobal [_weapon, 1];
-  _this addMagazineCargoGlobal [_startingAmmo, ((round random 1) + 1)];};
- default {};}; 
- 
+  _this addMagazineCargoGlobal [_startingAmmo, 1];
+ };
+ case 1: 
+ { 
+  switch ((round random 1)+1) do 
+  { 
+   case 1: 
+   {	
+	switch ((round random 3)+1) do 
+    {
+     case 1: {_weapon = "hgun_PDW2000_F";_startingAmmo = "30Rnd_556x45_Stanag";};  
+     case 2: {_weapon = "SMG_01_F";_startingAmmo = "30Rnd_45ACP_Mag_SMG_01_Tracer_Green";}; 
+     case 3: {_weapon = "SMG_02_F";_startingAmmo = "30Rnd_9x21_Mag_SMG_02_Tracer_Red";};   
+     case 4: {_weapon = "SMG_03_TR_black";_startingAmmo = "50Rnd_570x28_SMG_03";};
+     default {};
+    };
+    _this addWeaponCargoGlobal [_weapon, 1];
+    _this addMagazineCargoGlobal [_startingAmmo, 1];	
+   };
+   case 2: 
+   { 
+    switch (round random 1) do 
+    { 
+     case 0: 
+     {
+      switch ((round random 1)+1) do 
+      {
+       case 1: {_weapon = "arifle_Katiba_C_F";_startingAmmo = "30Rnd_65x39_caseless_green";};   
+       case 2: {_weapon = "arifle_TRG21_F";_startingAmmo = "30Rnd_556x45_Stanag";};
+       default {};
+      };
+	  _this addWeaponCargoGlobal [_weapon, 1];
+      _this addMagazineCargoGlobal [_startingAmmo, 1];
+     };
+     case 1: 
+     {
+	  switch ((round random 1)+1) do 
+      {
+       case 1: {_weapon = "srifle_DMR_01_F";_startingAmmo = "10Rnd_762x54_Mag";};
+       case 2: {_weapon = "launch_RPG7_F";_startingAmmo = "RPG7_F";};
+       default {};
+      };
+	  _this addWeaponCargoGlobal [_weapon, 1];
+      _this addMagazineCargoGlobal [_startingAmmo, 1];
+     };
+	 default {};
+    };
+   };
+   default {};
+  };
+ };
+ default {};
+};
+
 _ammoAmount = (round random 3) + 1; 
 _ammo = "9Rnd_45ACP_Mag"; 
 switch (round random 1) do 
@@ -159,7 +190,7 @@ switch (round random 2) do {
 for [{_i=0},{_i<4},{_i=_i+1}] do 
 {
  _attachment = "acc_flashlight_pistol";
- switch (round random 5) do { 
+ switch (round random 8) do { 
   case 1: {
    switch ((round random 15) + 1) do {  
 	case 1: {_attachment = "muzzle_snds_L";};
@@ -177,7 +208,7 @@ for [{_i=0},{_i<4},{_i=_i+1}] do
 	case 13: {_attachment = "muzzle_snds_M";};
 	case 14: {_attachment = "muzzle_snds_H";};
 	case 15: {_attachment = "muzzle_snds_H";};
-	case 16-: {_attachment = "muzzle_snds_B";};
+	case 16: {_attachment = "muzzle_snds_B";};
     default {_attachment = "muzzle_snds_L";};};
   _this addItemCargoGlobal  [_attachment, 1];};
   case 2: {
@@ -210,19 +241,19 @@ for [{_i=0},{_i<4},{_i=_i+1}] do
   _this addItemCargoGlobal  [_attachment, 1];};
   case 3: {
    switch ((round random 11) + 1) do {  
-	case : {_attachment = "acc_flashlight_pistol";};
-	case : {_attachment = "acc_flashlight_pistol";};
-	case : {_attachment = "acc_flashlight_pistol";};
-	case : {_attachment = "acc_flashlight_pistol";};	
-	case : {_attachment = "acc_flashlight_smg_01";};
-	case : {_attachment = "acc_flashlight_smg_01";};
-	case : {_attachment = "acc_flashlight_smg_01";};	
-	case : {_attachment = "acc_flashlight";};
-	case : {_attachment = "acc_flashlight";};	
-	case : {_attachment = "acc_pointer_IR";};
-	case : {_attachment = "acc_pointer_IR";};	
-	case : {_attachment = "bipod_01_F_khk";};
-	case : {_attachment = "bipod_01_F_khk";};	
+	case 1: {_attachment = "acc_flashlight_pistol";};
+	case 2: {_attachment = "acc_flashlight_pistol";};
+	case 3: {_attachment = "acc_flashlight_pistol";};
+	case 4: {_attachment = "acc_flashlight_pistol";};	
+	case 5: {_attachment = "acc_flashlight_smg_01";};
+	case 6: {_attachment = "acc_flashlight_smg_01";};
+	case 7: {_attachment = "acc_flashlight_smg_01";};	
+	case 8: {_attachment = "acc_flashlight";};
+	case 9: {_attachment = "acc_flashlight";};	
+	case 10: {_attachment = "acc_pointer_IR";};
+	case 11: {_attachment = "acc_pointer_IR";};	
+	case 12: {_attachment = "bipod_01_F_khk";};
+	case 13: {_attachment = "bipod_01_F_khk";};	
     default {_attachment = "acc_flashlight_pistol";};};
   _this addItemCargoGlobal  [_attachment, 1];};
   default {};};
